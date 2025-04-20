@@ -14,7 +14,7 @@ const AboutMeScrollSection: React.FC = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gray-100 pt-8 pl-20 pr-20 text-gray-800">
+    <section className="min-h-screen bg-gray-100 pt-8 px-4 md:pl-20 md:pr-20 text-gray-800">
       {/* Container for text and card */}
       <div>
         <motion.div
@@ -25,20 +25,22 @@ const AboutMeScrollSection: React.FC = () => {
         >
           
 
-        {/* New Card Component */}
-        <h3 className="text-3xl text-black font-bold mb-4">About me</h3>
-        <div className="mt-1 bg-white p-6 rounded-lg shadow-md w-full flex items-center space-x-6">
-          {/* Text content wrapper (takes 2/3 width) */}
-          <div className="w-2/3">
-            <p>
+        {/* New Card Component - Adjusted layout for mobile */}
+        <h3 className="text-2xl md:text-3xl text-black font-bold mb-4">About me</h3>
+        {/* Stack vertically on mobile, row on md+. Adjust spacing */}
+        <div className="mt-1 bg-white p-4 md:p-6 rounded-lg shadow-md w-full flex flex-col md:flex-row md:items-center space-y-6 md:space-y-0 md:space-x-6">
+          {/* Text content wrapper - Full width on mobile, 2/3 on md+ */}
+          <div className="w-full md:w-2/3">
+            {/* Adjusted text size slightly for readability on mobile */}
+            <p className="text-base md:text-base">
               As a software engineer focused on infrastructure, I thrive on building and refining the backbone systems that power large-scale operations.<br></br>
               My expertise lies in crafting robust, scalable execution platforms designed to handle extensive computational job farms efficiently.<br></br>
               I develop sophisticated analysis tools and user-friendly management applications, transforming raw, complex system data into actionable insights and elegant operational solutions.<br></br>
               Furthermore, I enjoy spearheading initiatives that bridge gaps between teams; by creating intuitive data visualization dashboards and unified management applications, I help streamline diverse processes, enhance infrastructure oversight, and boost overall efficiency.
             </p>
           </div>
-          {/* Image wrapper (takes 1/3 width) with perspective */}
-          <div className="flex items-center justify-center w-1/3 perspective">
+          {/* Image wrapper - Full width on mobile, 1/3 on md+. Centered content */}
+          <div className="flex items-center justify-center w-full md:w-1/3 perspective">
             {/* Flip container */}
             <div 
               className={`flip-card-inner ${isFlipped ? 'is-flipped' : ''}`}
