@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+body {
+  /*
+  Ensure consistent background and text colors regardless of theme.
+  The white background is primarily set via `bg-white` in layout.tsx,
+  but we remove the theme variables here to prevent potential conflicts.
+  */
+  /* font-family rule removed, handled by layout.tsx and tailwind.config.ts */
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blinking-cursor {
+  animation: blink 1s infinite step-end;
+  stroke-width: 2; /* Ensure cursor line is visible */
+  stroke: currentColor; /* Inherit color from parent SVG */
+}
