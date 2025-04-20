@@ -9,7 +9,7 @@ interface ContactMeSectionProps {
 // Wrap component with forwardRef
 const ContactMeSection = forwardRef<HTMLElement, ContactMeSectionProps>(({ isHighlighted }, ref) => {
   // --- IMPORTANT: Replace these placeholder URLs with your actual links ---
-  const linkedInUrl = "https://www.linkedin.com/in/badri-nerella-6166a81b7/"; // Replace with your LinkedIn URL
+  const linkedInUrl = "https://www.linkedin.com/in/badri-nerella/"; // Replace with your LinkedIn URL
   const githubUrl = "https://github.com/badrinadhgupta"; // Replace with your GitHub URL
   const instagramUrl = "https://www.instagram.com/baddriiiii/?igsh=eXA4MWR2N3Bpdzhk&utm_source=qr#"; // Replace with your Instagram URL
   const emailAddress = "nerella.rabasa@example.com"; // Replace with your email address
