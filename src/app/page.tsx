@@ -64,17 +64,17 @@ export default function Home() {
         <VideoBackground videoSrc={videoUrl}>
           {/* Content container for the first screen */}
           {/* Changed min-h-screen to h-screen to fix height to one screen */}
-          <main className="relative h-screen"> {/* Ensure this section takes full screen height */}
+          <main className="relative h-[100dvh]"> {/* Ensure this section uses dynamic viewport height */}
             
-            {/* Wrapper for top-left/top-right elements - Stacks on mobile, row on md+ */}
-            <div className="p-4 flex flex-col gap-2 md:flex-row md:justify-between md:items-start md:p-6 absolute inset-x-0 top-0 z-10"> 
-              {/* Text/Logo in top-left corner - Removed absolute, margin. Handled by parent flex */}
-              <div className="bg-white/70 backdrop-blur-3xl text-black px-3 py-1.5 md:px-4 md:py-2 rounded-2xl text-base md:text-lg shadow-md order-1 md:order-none"> {/* Added order-1 for mobile stacking preference */} 
+            {/* Wrapper for top-left/top-right elements - Always row, justify between */}
+            <div className="p-4 flex flex-row justify-between items-start md:p-6 absolute inset-x-0 top-0 z-10"> 
+              {/* Text/Logo in top-left corner - Use clamp for padding and text size */}
+              <div className="bg-white/70 backdrop-blur-3xl text-black px-[clamp(0.75rem,_3vw,_1rem)] py-[clamp(0.375rem,_1.5vw,_0.5rem)] rounded-2xl text-[clamp(0.75rem,_2.5vw,_1rem)] md:text-lg shadow-md"> {/* Removed order class, added clamp sizing */}
                 {/* Use flexbox for inline layout - content should wrap naturally if needed */}
                 <div className="flex items-center flex-wrap gap-1 md:gap-1.5"> {/* Added flex-wrap */} 
                   <span>ASIC engineer @</span>
-                  {/* Wrapper div to control image size based on height */}
-                  <div className="relative inline-block align-middle h-[45px] md:h-[30px]"> {/* Removed w-auto */}
+                  {/* Wrapper div to control image size based on height - Use clamp */}
+                  <div className="relative inline-block align-middle h-[clamp(18px,_4vw,_24px)] md:h-[24px]"> {/* Use clamp for height, md override */}
                     <Image 
                       src="/NVIDIA_horizontal.png" // Assuming logo is in public directory
                       alt="Nvidia Logo"
@@ -87,14 +87,14 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Button in top-right corner - Removed absolute, margin. Handled by parent flex */}
+              {/* Button in top-right corner - Use clamp for padding and text size */}
               <button
                 onClick={handleContactClick} // Add click handler
-                className="flex items-center gap-1.5 md:gap-2 bg-black text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full text-base md:text-xl shadow-md hover:bg-gray-900 hover:scale-105 transition-all duration-200 ease-in-out cursor-pointer order-2 md:order-none" // Added order-2
+                className="flex items-center gap-1.5 md:gap-2 bg-black text-white px-[clamp(0.75rem,_3vw,_1rem)] py-[clamp(0.375rem,_1.5vw,_0.5rem)] rounded-full text-[clamp(0.8rem,_3vw,_1.1rem)] md:text-xl shadow-md md:hover:bg-gray-900 md:hover:scale-105 transition-all duration-200 ease-in-out cursor-pointer" // Removed order class, added clamp sizing, md:hover
               >
                 <span>Contact Me</span>
                 {/* Upward-right arrow SVG icon - size adjusts with text */}
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4"> {/* Keep icon size simple for now */}
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5 19.5 4.5M19.5 4.5v10.5M19.5 4.5h-10.5" />
                 </svg>
               </button>
