@@ -31,12 +31,14 @@ const AboutMeScrollSection: React.FC = () => {
         <div className="mt-1 bg-white p-4 md:p-6 rounded-lg shadow-md w-full flex flex-col md:flex-row md:items-center space-y-6 md:space-y-0 md:space-x-6">
           {/* Text content wrapper - Full width on mobile, 2/3 on md+ */}
           <div className="w-full md:w-2/3">
-            {/* Adjusted text size slightly for readability on mobile */}
-            <p className="text-base md:text-base">
-              As a software engineer focused on infrastructure, I thrive on building and refining the backbone systems that power large-scale operations.<br></br>
-              My expertise lies in crafting robust, scalable execution platforms designed to handle extensive computational job farms efficiently.<br></br>
-              I develop sophisticated analysis tools and user-friendly management applications, transforming raw, complex system data into actionable insights and elegant operational solutions.<br></br>
-              Furthermore, I enjoy spearheading initiatives that bridge gaps between teams; by creating intuitive data visualization dashboards and unified management applications, I help streamline diverse processes, enhance infrastructure oversight, and boost overall efficiency.
+            <p className="text-lg md:text-xl mb-4">
+              Working as an Infrastructure Software Engineer at NVIDIA, I specialize in building and optimizing the backbone systems essential for our chip design teams. A core part of my role is maintaining and advancing our large-scale execution platform, responsible for managing vast numbers of compute jobs.
+            </p>
+            <p className="text-lg md:text-xl mb-4">
+              I develop specialized analysis tools and management applications designed to turn intricate system data into clear, actionable insights, enhancing overall workflow efficiency.
+            </p>
+            <p className="text-lg md:text-xl">
+              I also focus on creating unifying applications and dashboards that consolidate disparate processes, enabling better collaboration and data visibility across teams.
             </p>
           </div>
           {/* Image wrapper - Full width on mobile, 1/3 on md+. Centered content */}
