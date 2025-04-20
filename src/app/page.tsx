@@ -101,9 +101,9 @@ export default function Home() {
             </div>
 
             {/* Wrapper for Name and About Me sections using Flexbox */}
-            {/* Adjusted bottom padding/gap for mobile */}
+            {/* Adjusted bottom padding/gap for mobile, reduced gap */}
             <div 
-              className="absolute inset-x-0 bottom-0 p-4 md:p-0 flex flex-col items-start gap-6 md:gap-10" // Added padding for mobile, adjusted gap
+              className="absolute inset-x-0 bottom-0 p-4 md:p-0 flex flex-col items-start gap-4 md:gap-8" // Added padding for mobile, reduced gap
               style={{ transform: `translateY(${parallaxOffset}px)` }} // Apply dynamic transform
             >
 
@@ -135,10 +135,10 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Name section - Adjusted font size slightly for smallest screens */}
-              {/* text-6xl is base (mobile), md:text-[15rem] overrides for medium screens and up */}
+              {/* Name section - Adjusted font size using clamp and vmin for better viewport responsiveness */}
               <div className="text-white w-full px-4 md:px-0"> {/* Added padding for mobile */}
-                <h1 className="text-5xl sm:text-6xl md:text-[15rem] font-light text-black opacity-90 break-words"> {/* Adjusted base size, added break-words */}
+                {/* Clamped font size based on viewport minimum dimension (vmin) */}
+                <h1 className="font-light text-black opacity-90 break-words text-[clamp(2.5rem,_8vmin,_6rem)] md:text-[clamp(5rem,_20vmin,_15rem)]">
                   Badri <span className="opacity-60">Nerella</span>
                 </h1>
               </div>
