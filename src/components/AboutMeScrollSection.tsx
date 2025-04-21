@@ -14,13 +14,13 @@ const AboutMeScrollSection: React.FC = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gray-100 pt-8 px-4 md:pl-20 md:pr-20 text-gray-800">
+    <section className="bg-gray-100 pt-8 pb-6 sm:pb-4 lg:pb-8 px-4 md:pl-20 md:pr-20 text-gray-800">
       {/* Container for text and card */}
       <div>
         <motion.div
           initial={{ opacity: 0, y: 20 }} // Start invisible and slightly down
           whileInView={{ opacity: 1, y: 0 }} // Fade in and move up to original position
-          viewport={{ amount: 0.3 }} // Trigger animation every time 30% is visible
+          viewport={{ amount: 0.1, once: true }} // Trigger animation when just 10% is visible and only once
           transition={{ duration: 0.8, ease: "easeOut" }} // Animation duration and easing
         >
           
@@ -54,7 +54,7 @@ const AboutMeScrollSection: React.FC = () => {
                 <img 
                   src="/Badri_chilling.JPG" 
                   alt="Badri kolkata chilling" 
-                  className="rounded-lg object-cover w-[100%] h-auto shadow-md"
+                  className="rounded-lg object-cover w-full h-auto shadow-md max-h-[300px]"
                 />
               </div>
               {/* Back Face */}
@@ -62,7 +62,7 @@ const AboutMeScrollSection: React.FC = () => {
                 <img 
                   src="/Badri_kolkata_chilling.JPG"
                   alt="Badri chilling" 
-                  className="rounded-lg object-cover w-[100%] h-auto shadow-md"
+                  className="rounded-lg object-cover w-full h-auto shadow-md max-h-[300px]"
                 />
               </div>
             </div>
