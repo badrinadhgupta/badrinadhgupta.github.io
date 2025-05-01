@@ -20,3 +20,36 @@ body {
   stroke-width: 2; /* Ensure cursor line is visible */
   stroke: currentColor; /* Inherit color from parent SVG */
 }
+
+/* Infinite moving cards animation */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Set default animation duration in root to ensure it's available globally */
+:root {
+  --animation-duration: 20s; /* Faster default speed */
+  --animation-direction: forwards;
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration, 20s) var(--animation-direction, forwards) linear infinite;
+}
+
+/* Focus effect for work cards */
+.work-card {
+  transition: all 0.2s ease;
+  filter: blur(0) brightness(1);
+  transform: scale(1);
+  will-change: transform, filter;
+}
+
+.card-container:hover .work-card:not(:hover) {
+  filter: blur(1px) brightness(0.95);
+  transform: scale(0.98);
+}
