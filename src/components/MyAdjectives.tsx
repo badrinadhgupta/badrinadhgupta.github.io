@@ -47,13 +47,13 @@ interface AdjectiveCardProps {
 const AdjectiveCard: React.FC<AdjectiveCardProps> = ({ heading, icon, description }) => {
   return (
     <motion.div 
-      className="bg-white rounded-xl shadow-lg p-5 border border-gray-100 h-[180px] w-full flex flex-col relative overflow-hidden"
+      className="rounded-xl shadow-lg p-5 border border-gray-100 h-[180px] w-full flex flex-col relative overflow-hidden"
       variants={cardVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      {/* Background image with gradient opacity */}
+      {/* Background image with gradient opacity and blur effect */}
       <div 
         className="absolute inset-0 z-0"
         style={{
@@ -61,6 +61,8 @@ const AdjectiveCard: React.FC<AdjectiveCardProps> = ({ heading, icon, descriptio
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundBlendMode: 'overlay',
+          filter: 'blur(3px)',
+          opacity: 0.5
         }}
       ></div>
 
@@ -156,10 +158,9 @@ const MyAdjectives: React.FC = () => {
       {/* Content container */}
       <div className="relative z-10 max-w-6xl mx-auto pt-5">
         <div className="mb-16 text-center">
-          <h2 className={`${headingFont.className} text-4xl md:text-5xl bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 bg-clip-text text-transparent mb-4`}>
-            What am I like?
+          <h2 className={`${headingFont.className} text-4xl md:text-9xl bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 bg-clip-text text-transparent mb-4`}>
+            I am.
           </h2>
-          <p>In gist, I'm</p>
         </div>
         
         {/* Adjective cards container - using relative positioning instead of grid */}

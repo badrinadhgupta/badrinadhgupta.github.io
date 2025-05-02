@@ -292,7 +292,7 @@ const MyTechStack: React.FC = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <motion.h2 
-            className={`${headingFont.className} text-4xl md:text-5xl bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 bg-clip-text text-transparent mb-4`}
+            className={`${headingFont.className} text-4xl md:text-9xl bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 bg-clip-text text-transparent mb-4`}
           >
             Current Stack
           </motion.h2>

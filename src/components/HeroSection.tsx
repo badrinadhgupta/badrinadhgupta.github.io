@@ -47,14 +47,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Changed min-h-screen to h-screen to fix height to one screen */}
       <main className="relative h-[100dvh]"> {/* Ensure this section uses dynamic viewport height */}
         
-        {/* Wrapper for top-left/top-right elements - Always row, justify between */}
-        <div className="p-4 flex flex-row justify-between items-center md:p-6 absolute inset-x-0 top-0 z-10"> 
-          {/* Text/Logo in top-left corner - Matched styling with Contact Me */}
-          <div className="bg-white/40 backdrop-blur-sm text-black px-[clamp(0.75rem,_3vw,_1rem)] py-[clamp(0.375rem,_1.5vw,_0.5rem)] rounded-full shadow-md"> 
-            {/* Use flexbox for inline layout - content should wrap naturally if needed */}
+        {/* Wrapper for top-left/top-right elements - Changed to justify-end to place button at right */}
+        <div className="p-4 flex flex-row justify-end items-center md:p-6 absolute inset-x-0 top-0 z-10"> 
+          {/* Commented out ASIC engineer section */}
+          {/* 
+          <div className="text-black px-[clamp(0.5rem,_2vw,_0.75rem)] py-[clamp(0.25rem,_1vw,_0.375rem)]"> 
             <div className="flex items-center flex-wrap gap-1 md:gap-1.5 text-[clamp(0.8rem,_3vw,_1.1rem)] md:text-lg"> 
               <span>ASIC engineer @</span>
-              {/* Wrapper div to control image size based on height - Use clamp */}
               <div className="relative inline-block align-middle h-[clamp(18px,_4vw,_24px)] md:h-[24px]"> 
                 <Image 
                   src="/NVIDIA_horizontal.png"
@@ -67,6 +66,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               </div>
             </div>
           </div>
+          */}
 
           {/* Button in top-right corner - Keep consistent with ASIC engineer pill */}
           <button

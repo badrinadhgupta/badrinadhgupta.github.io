@@ -100,8 +100,7 @@ const MyStorySection: React.FC = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
               >
-                My Story started way back in 6th grade and a friend and I decided to build a website for our apartment complex. We were then exploring how to make a website, and found wix.com. After some trial and error, we finally made it - but in fact, we actually had no idea how it worked. This curiosity led me to take up computer science in highschool. <br/>
-                My official journey with coding started with Java in school, and once it clicked, I was hooked. I loved the logic and the way I could see the results of my work. This was the start of my love for coding.
+                My Story started way back in 6th grade when a friend and I decided to build a website for our apartment complex. We found wix.com, and after some trial and error, we made it - but we actually had no idea how it worked. This curiosity led me to take up computer science in highschool. My official journey with coding started with Java, and once it clicked, I was hooked. I loved the logic and seeing the results of my work.
               </motion.p>
               
               {/* Paragraph 2 */}
@@ -112,7 +111,7 @@ const MyStorySection: React.FC = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }} // Increased delay
               >
-                Since then, I explored many languages, and frameworks, and I loved every bit of it. In 11th and 12th, our school did not care much about computer science, and it was just focused on physics and math. But this did not fade my excitement and I picked it all right back up in college. I explored many languages, frameworks, and platforms; and currently, I love to still explore and learn new things. 
+                Since then, I explored many languages and frameworks, and I loved every bit of it. In 11th and 12th, our school didn't care much about computer science, and it was just focused on physics and math. But this didn't fade my excitement and I picked it all right back up in college. I explored many languages, frameworks, and platforms; and I still love to explore and learn new things.
               </motion.p>
               
               {/* Paragraph 3 */}
@@ -123,10 +122,7 @@ const MyStorySection: React.FC = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }} // Increased delay
               >
-                I actually ended up taking electronics and communication Engineering in college, but during Covid-19, I was just focused on learning every little thing about computers. This included coding, chip design, and a lot of other things.<br/>
-                This put me in a weird position where I was stuck between two worlds - the world of hardware and the world of software. <br/>
-                Placement season rolled in, and I was just going with the flow. Landed some software roles, but I was not sure if thats what I wanted to do. <br/>
-                And then, NVIDIA came in, and I just decided to go the hardware route. But still, I couldn't just leave my software skills behind. But as I started working, I realized that what I will be working on, is exactly the middle ground of hardware and software. Working around hardware colleagues, learning about chip design, but working for the methodology team, builiding flows, automations and a lot of different and unique projects.
+                I actually ended up taking electronics and communication Engineering in college, but during Covid-19, I was just focused on learning every little thing about computers. This put me in a weird position where I was stuck between hardware and software worlds. Placement season rolled in, and I was just going with the flow. And then, NVIDIA came in, and I went the hardware route. But at work, I found exactly the middle ground - working around hardware colleagues but building flows, automations and unique projects.
               </motion.p>
               
               {/* Paragraph 4 */}
@@ -137,8 +133,7 @@ const MyStorySection: React.FC = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }} // Increased delay
               >
-                And now, AI came in, and the power of software and an engineer's role has just changed. <br/>
-                I'm now learning about AI, and it's applications. Infact, majority of this portfolio was made with the help of AI. This is my attempt to see with my basic knowledge of web dev, what kind of a website I can build.
+                And now, AI came in, and the power of software and an engineer's role has just changed. I'm now learning about AI and its applications. In fact, majority of this portfolio was made with the help of AI. This is my attempt to see with my basic knowledge of web dev, what kind of a website I can build.
               </motion.p>
               
               {/* Paragraph 5 (Italic) */}
