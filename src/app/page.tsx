@@ -67,6 +67,12 @@ export default function Home() {
   // Function to handle tab change
   const handleTabChange = (tab: 'work' | 'about') => {
     setActiveTab(tab);
+    
+    // Scroll to the top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   // Page transition variants
