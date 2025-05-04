@@ -62,14 +62,27 @@ const AdjectiveCard: React.FC<AdjectiveCardProps> = ({ heading, icon, descriptio
           backgroundPosition: 'center',
           backgroundBlendMode: 'overlay',
           filter: 'blur(3px)',
-          opacity: 0.5
+          opacity: 0.4
         }}
       ></div>
 
       {/* Content */}
       <div className="relative z-10 flex items-start mb-2">
-        <div className="text-2xl text-indigo-600 mr-4">
-          {icon}
+        <div className="relative overflow-hidden rounded-full w-10 h-10 flex items-center justify-center mr-4">
+          {/* Icon background */}
+          <div 
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: "url('/Video_ss.png')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              filter: 'brightness(0.9)'
+            }}
+          ></div>
+          {/* Icon with slightly increased size for better visibility */}
+          <div className="text-2xl text-white relative z-10">
+            {icon}
+          </div>
         </div>
         <h3 className={`${headingFont.className} text-xl text-gray-800`}>
           {heading}
@@ -154,6 +167,44 @@ const MyAdjectives: React.FC = () => {
           WebkitMaskImage: 'linear-gradient(to right, black 70%, transparent 100%)'
         }}
       ></div>
+
+      {/* Decorative line from bottom right */}
+      {/* <div 
+        className="absolute hidden md:block bottom-[10%] right-0 w-[40%] h-[3px] transform rotate-9 origin-right z-[2]"
+        style={{
+          backgroundImage: "url('/Video_ss.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          maskImage: 'linear-gradient(to left, black 70%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to left, black 70%, transparent 100%)'
+        }}
+      ></div> */}
+
+      {/* Decorative line from upper right */}
+      <div 
+        className="absolute hidden md:block top-[25%] right-0 w-[45%] h-[2px] transform rotate-[-12deg] origin-right z-[2]"
+        style={{
+          backgroundImage: "url('/Video_ss.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          maskImage: 'linear-gradient(to left, black 70%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to left, black 70%, transparent 100%)'
+        }}
+      ></div>
+
+      {/* Decorative line from mid-right */}
+      <div 
+        className="absolute hidden md:block top-[45%] right-0 w-[35%] h-[2px] transform rotate-[20deg] origin-right z-[2]"
+        style={{
+          backgroundImage: "url('/Video_ss.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          maskImage: 'linear-gradient(to left, black 60%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to left, black 60%, transparent 100%)'
+        }}
+      ></div>
+
+      
 
       {/* Content container */}
       <div className="relative z-10 max-w-6xl mx-auto pt-5">

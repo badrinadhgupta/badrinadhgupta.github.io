@@ -226,13 +226,13 @@ const MyTechStack: React.FC = () => {
     { 
       name: 'React', 
       logoPath: '/logos/react-svgrepo-com.svg', 
-      color: '#61DAFB',
+      color: '#52b6d1',
       preserveAspectRatio: true
     },
     { 
       name: 'NextJS', 
       logoPath: '/logos/nextjs-icon-svgrepo-com.svg', 
-      color: '#000000',
+      color: '#4a4a4a',
       preserveAspectRatio: true
     },
     { 
@@ -255,7 +255,7 @@ const MyTechStack: React.FC = () => {
     { 
       name: 'AI', 
       logoPath: '/logos/ai-platform-svgrepo-com.svg', 
-      color: '#00A67E',
+      color: '#50ccae',
       preserveAspectRatio: true
     }
   ];
