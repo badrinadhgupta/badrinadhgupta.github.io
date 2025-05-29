@@ -50,7 +50,14 @@ const WorkSection: React.FC = () => {
               <div className="mb-3">
                 <h2 className="text-3xl md:text-5xl font-bold text-gray-900 inline-block">
                   Projects
-                  <div className="h-1 bg-blue-600 w-1/3 mt-2"></div>
+                  <div 
+                    className="h-1 w-1/2 mt-2"
+                    style={{
+                      backgroundImage: "url('/Video_ss.png')",
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
+                    }}
+                  ></div>
                 </h2>
               </div>
               <p className="text-gray-600 max-w-2xl text-lg">
@@ -61,12 +68,29 @@ const WorkSection: React.FC = () => {
         </motion.div>
 
         <div className="mt-12 overflow-hidden">
-          {/* Using InfiniteMovingCards instead of manual scroll */}
-          <InfiniteMovingCards 
-            items={workData}
-            speed="slow"
-            pauseOnHover={true}
-          />
+          {/* Mobile version: Simple stacked cards */}
+          <div className="block lg:hidden space-y-6 px-4">
+            {workData.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <WorkCard project={project} />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Desktop version: Infinite moving cards */}
+          <div className="hidden lg:block">
+            <InfiniteMovingCards 
+              items={workData}
+              speed="slow"
+              pauseOnHover={true}
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -80,7 +104,8 @@ interface WorkCardProps {
 export const WorkCard: React.FC<WorkCardProps> = ({ project }) => {
   return (
     <motion.div
-      className="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 h-[600px] pb-5 relative work-card"
+      className="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 
+                 h-[400px] sm:h-[600px] pb-5 relative work-card"
       whileHover={{ 
         y: -5,
         scale: 1.02,
@@ -91,7 +116,7 @@ export const WorkCard: React.FC<WorkCardProps> = ({ project }) => {
     >
       {/* Image */}
       {project.imageSrc && (
-        <div className="relative w-full h-48 bg-gray-100 overflow-hidden">
+        <div className="relative w-full h-32 sm:h-48 bg-gray-100 overflow-hidden">
           <Image 
             src={project.imageSrc} 
             alt={project.imageAlt || project.title}
@@ -107,9 +132,9 @@ export const WorkCard: React.FC<WorkCardProps> = ({ project }) => {
       )}
 
       {/* Content */}
-      <div className="flex flex-col p-6 flex-grow">
-        <div className="mb-4">
-          <h3 className="text-xl font-bold text-gray-800 leading-tight group-hover:text-gray-900 transition-colors duration-300">
+      <div className="flex flex-col p-4 sm:p-6 flex-grow">
+        <div className="mb-3 sm:mb-4">
+          <h3 className="text-lg sm:text-xl font-bold text-gray-800 leading-tight group-hover:text-gray-900 transition-colors duration-300">
             {project.title}
           </h3>
           {project.company && (
@@ -130,7 +155,7 @@ export const WorkCard: React.FC<WorkCardProps> = ({ project }) => {
         </div>
         
         {project.role && (
-          <p className="text-sm text-gray-500 mb-4 flex items-center">
+          <p className="text-sm text-gray-500 mb-3 sm:mb-4 flex items-center">
             <svg className="w-4 h-4 mr-1.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
@@ -138,17 +163,17 @@ export const WorkCard: React.FC<WorkCardProps> = ({ project }) => {
           </p>
         )}
         
-        <p className="text-gray-600 mb-6 flex-grow line-clamp-3">
+        <p className="text-gray-600 mb-4 sm:mb-6 flex-grow line-clamp-3 text-sm sm:text-base">
           {project.description}
         </p>
 
-        <div className="mb-6 space-y-4 mt-auto">
+        <div className="mb-4 sm:mb-6 space-y-3 sm:space-y-4 mt-auto">
           {project.specialTags && project.specialTags.length > 0 && (
             <div className="flex flex-wrap gap-2">
               {project.specialTags.map((tag, idx) => (
                 <span
                   key={idx}
-                  className="inline-block bg-yellow-50 text-yellow-700 font-medium text-xs px-3 py-1.5 rounded-full border border-yellow-200"
+                  className="inline-block bg-yellow-50 text-yellow-700 font-medium text-xs px-2 sm:px-3 py-1 sm:py-1.5 rounded-full border border-yellow-200"
                 >
                   {tag}
                 </span>
@@ -160,7 +185,7 @@ export const WorkCard: React.FC<WorkCardProps> = ({ project }) => {
             {project.technologies.slice(0, 3).map((tech, index) => (
               <span 
                 key={index} 
-                className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full border border-gray-200 hover:bg-gray-200 transition-colors duration-300"
+                className="bg-gray-100 text-gray-700 text-xs font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-full border border-gray-200 hover:bg-gray-200 transition-colors duration-300"
               >
                 {tech}
               </span>
@@ -171,7 +196,7 @@ export const WorkCard: React.FC<WorkCardProps> = ({ project }) => {
           </div>
         </div>
         
-        <div className="flex gap-4 pt-4 border-t border-gray-100">
+        <div className="flex gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-gray-100">
           {project.projectUrl && (
             <a 
               href={project.projectUrl} 

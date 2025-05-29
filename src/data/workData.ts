@@ -56,9 +56,9 @@ const workData: WorkItem[] = [
     specialTags: ["Capstone Project"]
   },
   {
-    id: "project-4",
+    id: "project-5",
     title: "Atlas",
-    description: "Atlas is a sophisticated platform that seamlessly aggregates and analyzes data from every stage of a chip’s lifecycle, transforming complex verification results into clear, actionable insights. Designed for engineering leaders, it delivers a real-time, holistic view of project health—surfacing critical trends, bottlenecks, and progress through elegant, intuitive dashboards—empowering confident, data-driven decision making in even the most complex environments.",
+    description: "Atlas is a sophisticated platform that seamlessly aggregates and analyzes data from every stage of a chip's lifecycle, transforming complex verification results into clear, actionable insights. Designed for engineering leaders, it delivers a real-time, holistic view of project health—surfacing critical trends, bottlenecks, and progress through elegant, intuitive dashboards—empowering confident, data-driven decision making in even the most complex environments.",
     technologies: ["Python", "NextJS", "TailwindCSS", "ElasticSearch", "perl"],
     role: "Lead Developer",
     company: "NVIDIA",

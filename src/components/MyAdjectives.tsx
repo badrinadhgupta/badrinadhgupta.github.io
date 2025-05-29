@@ -47,7 +47,7 @@ interface AdjectiveCardProps {
 const AdjectiveCard: React.FC<AdjectiveCardProps> = ({ heading, icon, description }) => {
   return (
     <motion.div 
-      className="rounded-xl shadow-lg p-5 border border-gray-100 h-[180px] w-full flex flex-col relative overflow-hidden"
+      className="rounded-xl shadow-lg p-4 sm:p-5 border border-gray-100 h-[150px] sm:h-[160px] md:h-[180px] w-full flex flex-col relative overflow-hidden"
       variants={cardVariants}
       initial="hidden"
       whileInView="visible"
@@ -68,7 +68,7 @@ const AdjectiveCard: React.FC<AdjectiveCardProps> = ({ heading, icon, descriptio
 
       {/* Content */}
       <div className="relative z-10 flex items-start mb-2">
-        <div className="relative overflow-hidden rounded-full w-10 h-10 flex items-center justify-center mr-4">
+        <div className="relative overflow-hidden rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center mr-3 sm:mr-4">
           {/* Icon background */}
           <div 
             className="absolute inset-0 z-0"
@@ -79,16 +79,16 @@ const AdjectiveCard: React.FC<AdjectiveCardProps> = ({ heading, icon, descriptio
               filter: 'brightness(0.9)'
             }}
           ></div>
-          {/* Icon with slightly increased size for better visibility */}
-          <div className="text-2xl text-white relative z-10">
+          {/* Icon with responsive size */}
+          <div className="text-lg sm:text-xl md:text-2xl text-white relative z-10">
             {icon}
           </div>
         </div>
-        <h3 className={`${headingFont.className} text-xl text-gray-800`}>
+        <h3 className={`${headingFont.className} text-lg sm:text-xl text-gray-800`}>
           {heading}
         </h3>
       </div>
-      <p className={`${bodyFont.className} text-gray-600 text-base mt-auto relative z-10`}>
+      <p className={`${bodyFont.className} text-gray-600 text-sm sm:text-base mt-auto relative z-10`}>
         {description}
       </p>
     </motion.div>
@@ -123,7 +123,7 @@ const MyAdjectives: React.FC = () => {
   return (
     // Apply styles from MyStorySection
     <motion.section 
-      className="relative py-16 px-0 md:px-8 text-gray-800 overflow-hidden pt-[8vw]" // Base styles
+      className="relative py-12 sm:py-16 px-0 md:px-8 text-gray-800 overflow-hidden pt-[6vw] sm:pt-[8vw]" // Base styles
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -207,9 +207,9 @@ const MyAdjectives: React.FC = () => {
       
 
       {/* Content container */}
-      <div className="relative z-10 max-w-6xl mx-auto pt-5">
-        <div className="mb-16 text-center">
-          <h2 className={`${headingFont.className} text-4xl md:text-9xl bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 bg-clip-text text-transparent mb-4`}>
+      <div className="relative z-10 max-w-6xl mx-auto pt-3 sm:pt-5">
+        <div className="mb-10 sm:mb-12 md:mb-16 text-center">
+          <h2 className={`${headingFont.className} text-3xl sm:text-4xl md:text-9xl bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 bg-clip-text text-transparent mb-3 sm:mb-4`}>
             I am.
           </h2>
         </div>
@@ -217,7 +217,7 @@ const MyAdjectives: React.FC = () => {
         {/* Adjective cards container - using relative positioning instead of grid */}
         <div className="relative w-full flex flex-col md:block">
           {/* Left column */}
-          <div className="md:w-[49%] md:float-left mb-3 md:mb-0">
+          <div className="md:w-[49%] md:float-left mb-2 sm:mb-3 md:mb-0">
             <StaggerContainer>
               <AdjectiveCard 
                 heading="Student"
@@ -225,7 +225,7 @@ const MyAdjectives: React.FC = () => {
                 description="Always learning, always growing. I see every challenge as an opportunity to expand my knowledge and skills."
               />
               
-              <div className="mt-3">
+              <div className="mt-2 sm:mt-3">
                 <AdjectiveCard 
                   heading="Curiosity Driven"
                   icon={<FaFlask />}
@@ -246,7 +246,7 @@ const MyAdjectives: React.FC = () => {
                 />
               </div>
               
-              <div className="mt-3">
+              <div className="mt-2 sm:mt-3">
                 <AdjectiveCard 
                   heading="Innovative"
                   icon={<FaLightbulb />}

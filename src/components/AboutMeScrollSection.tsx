@@ -30,7 +30,7 @@ const AboutMeScrollSection: React.FC = () => {
 
   return (
     <section 
-      className="relative pt-8 pb-24 sm:pb-28 lg:pb-55 px-0 md:px-8 text-gray-800 overflow-hidden"
+      className="relative pt-6 sm:pt-8 pb-16 sm:pb-20 md:pb-24 lg:pb-55 px-0 md:px-8 text-gray-800 overflow-hidden"
       style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw))' }} // Slanted bottom edge (down-left)
     >
       {/* Metallic gradient backdrop */}
@@ -66,11 +66,11 @@ const AboutMeScrollSection: React.FC = () => {
           {/* Stack vertically on mobile, row on md+. Adjust spacing */}
           <div className="w-full flex flex-col md:flex-row md:items-stretch space-y-6 md:space-y-0 md:space-x-6">
             {/* Text content wrapper - Full width on mobile, 2/3 on md+ */}
-            <div className="w-full md:w-2/3 flex flex-col items-start p-6 py-6 px-0 md:p-10 mt-20">
+            <div className="w-full md:w-2/3 flex flex-col items-start p-4 sm:p-6 md:p-10 mt-12 sm:mt-16 md:mt-20">
               <div className="overflow-hidden">
                 <motion.h1 
                 // className={`${headingFont.className} text-5xl md:text-7xl lg:text-9xl bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 bg-clip-text text-transparent px-4 md:px-0`}
-                  className={`${headingFont.className} text-5xl md:text-7xl lg:text-9xl bg-clip-text text-transparent px-4 md:px-0`}
+                  className={`${headingFont.className} text-3xl sm:text-4xl md:text-7xl lg:text-9xl bg-clip-text text-transparent px-4 md:px-0`}
                   style={{ 
                     backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('/Video_ss.png')",
                     backgroundSize: 'cover',
@@ -81,14 +81,14 @@ const AboutMeScrollSection: React.FC = () => {
                   transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
                 >
                   I'm Badri <br/>
-                  <span className="ml-16 md:ml-24 lg:ml-32">Nerella.</span>
+                  <span className="ml-8 sm:ml-12 md:ml-24 lg:ml-32">Nerella.</span>
                 </motion.h1>
               </div>
               
-              <div className="mt-auto pt-10 pr-0 md:pr-30 px-4 md:px-0">
+              <div className="mt-auto pt-6 sm:pt-8 md:pt-10 pr-0 md:pr-30 px-4 md:px-0">
                 <div className="overflow-hidden">
                   <motion.h2 
-                    className={`${headingFont.className} text-lg md:text-xl lg:text-2xl text-gray-700`}
+                    className={`${headingFont.className} text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700`}
                     initial={{ y: 70 }}
                     animate={{ y: 0 }}
                     transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
@@ -98,7 +98,7 @@ const AboutMeScrollSection: React.FC = () => {
                 </div>
                 <div className="overflow-hidden mt-4">
                   <motion.p 
-                    className={`${bodyFont.className} text-gray-700 text-md leading-relaxed pr-0 md:pr-10 lg:pr-35`}
+                    className={`${bodyFont.className} text-gray-700 text-sm sm:text-base leading-relaxed pr-0 md:pr-10 lg:pr-35`}
                     initial={{ y: 200 }}
                     animate={{ y: 0 }}
                     transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
@@ -112,7 +112,7 @@ const AboutMeScrollSection: React.FC = () => {
             {/* Image wrapper - Full width on mobile, 1/3 on md+. Centered content */}
             <div className="flex items-center justify-center w-full md:w-1/3 perspective relative">
               {/* Flip container */}
-              <div className="overflow-hidden">
+              <div className="overflow-hidden max-w-[350px] sm:max-w-none">
                 <motion.div 
                   initial={{ y: 900 }}
                   animate={{ y: 0 }}
@@ -129,7 +129,7 @@ const AboutMeScrollSection: React.FC = () => {
                       <img 
                         src="/Badri_chilling.JPG" 
                         alt="Badri kolkata chilling" 
-                        className="rounded-t-full rounded-b-none object-cover w-full h-auto shadow-lg shadow-blue-500/30 max-h-[300px]"
+                        className="rounded-t-full rounded-b-none object-cover w-full shadow-lg shadow-blue-500/30 h-[350px] sm:h-auto sm:max-h-[300px]"
                       />
                     </div>
                     {/* Back Face */}
@@ -137,7 +137,7 @@ const AboutMeScrollSection: React.FC = () => {
                       <img 
                         src="/Badri_kolkata_chilling.JPG"
                         alt="Badri chilling" 
-                        className="rounded-t-full rounded-b-none object-cover w-full h-auto shadow-lg shadow-blue-500/30 max-h-[300px]"
+                        className="rounded-t-full rounded-b-none object-cover w-full shadow-lg shadow-blue-500/30 h-[350px] sm:h-auto sm:max-h-[300px]"
                       />
                     </div>
                   </div>

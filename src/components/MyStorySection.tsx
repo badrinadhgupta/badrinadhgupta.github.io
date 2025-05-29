@@ -27,7 +27,7 @@ const sectionVariants = {
 const MyStorySection: React.FC = () => {
   return (
     <motion.section 
-      className="relative py-16 px-0 md:px-8 text-gray-800 overflow-hidden pt-[8vw] pb-[10vw]" // Added bottom padding to accommodate blend
+      className="relative py-12 sm:py-16 px-0 md:px-8 text-gray-800 overflow-hidden pt-[6vw] sm:pt-[8vw] pb-[8vw] sm:pb-[10vw]" // Added bottom padding to accommodate blend
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -74,7 +74,7 @@ const MyStorySection: React.FC = () => {
       ></div>
       
       {/* Content container */}
-      <div className="relative z-10 max-w-6xl mx-auto pt-8">
+      <div className="relative z-10 max-w-6xl mx-auto pt-4 sm:pt-6 md:pt-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -90,11 +90,11 @@ const MyStorySection: React.FC = () => {
           </div> */}
           
           {/* Simple big paragraph version */}
-          <div className="px-6 md:px-12 lg:px-24">
+          <div className="px-4 sm:px-6 md:px-12 lg:px-24">
             <div className="">
               {/* Paragraph 1 */}
               <motion.p 
-                className={`${bodyFont.className} text-gray-700 text-lg leading-relaxed`}
+                className={`${bodyFont.className} text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -105,7 +105,7 @@ const MyStorySection: React.FC = () => {
               
               {/* Paragraph 2 */}
               <motion.p 
-                className={`${bodyFont.className} text-gray-700 text-lg leading-relaxed mt-6`}
+                className={`${bodyFont.className} text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed mt-4 sm:mt-6`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -116,7 +116,7 @@ const MyStorySection: React.FC = () => {
               
               {/* Paragraph 3 */}
               <motion.p 
-                className={`${bodyFont.className} text-gray-700 text-lg leading-relaxed mt-6`}
+                className={`${bodyFont.className} text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed mt-4 sm:mt-6`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -127,7 +127,7 @@ const MyStorySection: React.FC = () => {
               
               {/* Paragraph 4 */}
               <motion.p 
-                className={`${bodyFont.className} text-gray-700 text-lg leading-relaxed mt-6`}
+                className={`${bodyFont.className} text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed mt-4 sm:mt-6`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -138,7 +138,7 @@ const MyStorySection: React.FC = () => {
               
               {/* Paragraph 5 (Italic) */}
               <motion.p 
-                className={`${bodyFont.className} text-gray-700 text-lg leading-relaxed mt-6 font-medium italic`}
+                className={`${bodyFont.className} text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed mt-4 sm:mt-6 font-medium italic`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -150,8 +150,8 @@ const MyStorySection: React.FC = () => {
           </div>
           
           {/* Call to action */}
-          <div className="mt-16 text-center">
-            <p className={`${bodyFont.className} text-gray-700 italic mb-6`}>This journey continues as I explore new technologies and challenges...</p>
+          <div className="mt-12 sm:mt-16 text-center">
+            <p className={`${bodyFont.className} text-gray-700 italic mb-4 sm:mb-6 text-sm sm:text-base`}>This journey continues as I explore new technologies and challenges...</p>
           </div>
         </motion.div>
       </div>

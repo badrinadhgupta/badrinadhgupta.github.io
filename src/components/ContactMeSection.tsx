@@ -115,7 +115,7 @@ const ContactMeSection = forwardRef<HTMLElement, ContactMeSectionProps>(({ isHig
     // Forward the ref to the section element
     <section
       ref={ref}
-      className={`relative py-12 px-4 md:px-8 transition-colors duration-500 min-h-[250px] ${isHighlighted ? 'bg-red-100' : ''}`}
+      className={`relative py-8 md:py-12 px-4 md:px-8 transition-colors duration-500 min-h-[200px] md:min-h-[250px] ${isHighlighted ? 'bg-red-100' : ''}`}
     >
       {/* Background image with subtle gradient overlays */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
@@ -185,13 +185,13 @@ const ContactMeSection = forwardRef<HTMLElement, ContactMeSectionProps>(({ isHig
       {/* Content with relative positioning to appear above the background */}
       <div className="container mx-auto relative z-20 h-full flex flex-col md:flex-row md:justify-between">
         {/* Left section */}
-        <div className="text-left text-white md:max-w-md mb-8 md:mb-0">
-          <h2 className="text-4xl font-bold mb-3">Curious?</h2>
-          <p className="text-base opacity-80 mb-5">
+        <div className="text-left text-white md:max-w-md mb-6 md:mb-8">
+          <h2 className="text-2xl md:text-4xl font-bold mb-2 md:mb-3">Curious?</h2>
+          <p className="text-sm md:text-base opacity-80 mb-4 md:mb-5">
             I'm always open to new opportunities, collaborations, and projects. Whether you have a project in mind or just want to say hello, feel free to reach out via email or connect with me on any of my socials.
           </p>
           
-          <div className="flex space-x-5">
+          <div className="flex space-x-4 md:space-x-5">
             {contactLinks.map((link) => (
               <a
                 key={link.name}
@@ -201,21 +201,21 @@ const ContactMeSection = forwardRef<HTMLElement, ContactMeSectionProps>(({ isHig
                 aria-label={`Contact me via ${link.name}`}
                 className="text-white hover:text-gray-300 transition-colors duration-300"
               >
-                <link.icon className="w-5 h-5" />
+                <link.icon className="w-4 h-4 md:w-5 md:h-5" />
               </a>
             ))}
           </div>
         </div>
         
         {/* Right section */}
-        <div className="text-white text-right self-end md:self-center">
-          <div className="md:mb-8">
-            <h3 className="text-lg mb-1">[ NAVIGATION ]</h3>
+        <div className="hidden lg:block text-white text-right self-end md:self-center">
+          <div className="mb-4 md:mb-8">
+            <h3 className="text-base md:text-lg mb-1">[ NAVIGATION ]</h3>
             <ul className="flex flex-col items-end space-y-1">
               <li>
                 <button 
                   onClick={handleNavClick('work')} 
-                  className="hover:underline text-right"
+                  className="hover:underline text-right text-sm md:text-base"
                 >
                   Work
                 </button>
@@ -223,7 +223,7 @@ const ContactMeSection = forwardRef<HTMLElement, ContactMeSectionProps>(({ isHig
               <li>
                 <button 
                   onClick={handleNavClick('about')} 
-                  className="hover:underline text-right"
+                  className="hover:underline text-right text-sm md:text-base"
                 >
                   About
                 </button>
@@ -231,7 +231,7 @@ const ContactMeSection = forwardRef<HTMLElement, ContactMeSectionProps>(({ isHig
               <li className="relative flex items-center justify-end">
                 <button 
                   onClick={handleNavClick('blogs')} 
-                  className="hover:underline text-right"
+                  className="hover:underline text-right text-sm md:text-base"
                 >
                   Blogs
                 </button>
@@ -246,21 +246,21 @@ const ContactMeSection = forwardRef<HTMLElement, ContactMeSectionProps>(({ isHig
             </ul>
           </div>
           
-          <div className="mt-6">
+          <div className="mt-4 md:mt-6">
             {/* Render time only when currentTime state is set (client-side) */}
             {currentTime && (
               <p className="text-right text-xs opacity-70 mb-2">Local time - {currentTime}</p>
             )}
 
-            <div className="border inline-flex rounded-lg overflow-hidden text-sm">
+            <div className="border inline-flex rounded-lg overflow-hidden text-xs md:text-sm">
               <div className="flex items-center p-1 bg-transparent">
-                <div className="rounded-full bg-white/20 w-6 h-6 flex items-center justify-center mr-1">
-                  <span className="text-base">🌐</span>
+                <div className="rounded-full bg-white/20 w-5 h-5 md:w-6 md:h-6 flex items-center justify-center mr-1">
+                  <span className="text-sm md:text-base">🌐</span>
                 </div>
               </div>
               <div className="flex flex-col">
-                <div className="px-3 py-1 border-l border-white/20 bg-[#0C0034]/50">Working Globally</div>
-                <div className="px-3 py-1 border-l border-t border-white/20 bg-[#0C0034]/50">Available For Work</div>
+                <div className="px-2 md:px-3 py-1 border-l border-white/20 bg-[#0C0034]/50">Working Globally</div>
+                <div className="px-2 md:px-3 py-1 border-l border-t border-white/20 bg-[#0C0034]/50">Available For Work</div>
               </div>
             </div>
           </div>
@@ -269,8 +269,8 @@ const ContactMeSection = forwardRef<HTMLElement, ContactMeSectionProps>(({ isHig
       
       {/* Footer */}
       <div className="absolute bottom-2 left-0 right-0 text-center text-white opacity-70 relative z-20">
-        <p className="text-base font-bold">© 2025</p>
-        <p className="text-3xl font-bold tracking-wider">BADRI NERELLA</p>
+        <p className="text-sm md:text-base font-bold">© 2025</p>
+        <p className="text-xl md:text-3xl font-bold tracking-wider">BADRI NERELLA</p>
       </div>
     </section>
   );
