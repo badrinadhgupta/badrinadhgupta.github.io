@@ -1,5 +1,5 @@
 import React, { forwardRef, useEffect, useState } from 'react';
-import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 import Image from 'next/image';
 
@@ -76,6 +76,16 @@ const ContactMeSection = forwardRef<HTMLElement, ContactMeSectionProps>(({ isHig
       window.removeEventListener('resize', checkActiveTab);
     };
   }, []);
+
+  // Function to handle resume download
+  const handleResumeDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/Badri.pdf';
+    link.download = 'Badri_Nerella_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const contactLinks = [
     { name: 'GitHub', url: githubUrl, icon: FaGithub },
@@ -191,7 +201,7 @@ const ContactMeSection = forwardRef<HTMLElement, ContactMeSectionProps>(({ isHig
             I'm always open to new opportunities, collaborations, and projects. Whether you have a project in mind or just want to say hello, feel free to reach out via email or connect with me on any of my socials.
           </p>
           
-          <div className="flex space-x-4 md:space-x-5">
+          <div className="flex items-center space-x-4 md:space-x-5">
             {contactLinks.map((link) => (
               <a
                 key={link.name}
@@ -204,6 +214,16 @@ const ContactMeSection = forwardRef<HTMLElement, ContactMeSectionProps>(({ isHig
                 <link.icon className="w-4 h-4 md:w-5 md:h-5" />
               </a>
             ))}
+            
+            {/* Resume download button */}
+            <button
+              onClick={handleResumeDownload}
+              aria-label="Download Resume"
+              className="inline-flex items-center px-3 py-1.5 text-xs md:text-sm font-medium text-white bg-white/10 hover:bg-white/20 rounded-md border border-white/20 hover:border-white/30 transition-all duration-300 backdrop-blur-sm"
+            >
+              <FaDownload className="w-3 h-3 md:w-4 md:h-4 mr-1.5" />
+              Resume
+            </button>
           </div>
         </div>
         
