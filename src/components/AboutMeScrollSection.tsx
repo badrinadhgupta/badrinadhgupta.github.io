@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './AboutMeScrollSection.css'; // Import the CSS file
 import { Sora, Inter } from 'next/font/google';
+// import DecryptedText from './cool_components/DecryptedText';
+import Lanyard from './cool_components/Lanyard';
+import Orb from './cool_components/Orb';
 
 // Initialize the Sora and Inter fonts
 const headingFont = Sora({
@@ -144,6 +147,7 @@ const AboutMeScrollSection: React.FC = () => {
                 </motion.div>
               </div>
               
+              {/* <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} /> */}
             </div>
           </div>
         </div>
