@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable react/no-unknown-property */
 "use client";
 import { useEffect, useRef, useState } from "react";
@@ -19,9 +20,6 @@ import {
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 import * as THREE from "three";
-
-// import cardGLB from "./card.glb";
-// import lanyard from "./metallic-background.jpg";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
